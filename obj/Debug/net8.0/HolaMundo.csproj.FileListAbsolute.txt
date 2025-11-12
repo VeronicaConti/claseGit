@@ -26,3 +26,4 @@ C:\Users\Usuario\Desktop\ProyectosC#\HolaMundo\obj\Debug\net8.0\refint\HolaMundo
 C:\Users\Usuario\Desktop\ProyectosC#\HolaMundo\obj\Debug\net8.0\HolaMundo.pdb
 C:\Users\Usuario\Desktop\ProyectosC#\HolaMundo\obj\Debug\net8.0\HolaMundo.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\ProyectosC#\HolaMundo\obj\Debug\net8.0\ref\HolaMundo.dll
+C:\Users\Usuario\Desktop\ProyectosC#\HolaMundo\obj\Debug\net8.0\HolaMundo.sourcelink.json
