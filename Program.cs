@@ -6,10 +6,11 @@ namespace MiPrimerPrograma
     {
         static void Main(string[] args)
         {
-            // Pide Nombre 
+            // Ingresar Nombre 
             Console.WriteLine("Por favor, ingrese su nombre completo:");
             string nombre = Console.ReadLine();
 
+            // Morstrar Nombre y Fecha
             string fechaHoy = DateTime.Now.ToString("dd/MM/yyyy");
             Console.WriteLine("Nombre: " + nombre);
             Console.WriteLine("Fecha de hoy: " + fechaHoy);
@@ -23,6 +24,7 @@ namespace MiPrimerPrograma
             string entrada2 = Console.ReadLine();
             int numero2 = int.Parse(entrada2);
 
+            // Muestra suma para segundo commit
             int suma = numero1 + numero2;
             Console.WriteLine("La suma de los dos números es: " + suma);
         }
