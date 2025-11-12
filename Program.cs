@@ -10,13 +10,11 @@ namespace MiPrimerPrograma
             Console.WriteLine("Por favor, ingrese su nombre completo:");
             string nombre = Console.ReadLine();
 
-            // Muestra nombre y fechas
             string fechaHoy = DateTime.Now.ToString("dd/MM/yyyy");
             Console.WriteLine("Nombre: " + nombre);
             Console.WriteLine("Fecha de hoy: " + fechaHoy);
             Console.WriteLine("----------------------------------");
 
-            // Solicitar dos números
             Console.WriteLine("Ingrese el primer número:");
             string entrada1 = Console.ReadLine();
             int numero1 = int.Parse(entrada1);
@@ -25,7 +23,6 @@ namespace MiPrimerPrograma
             string entrada2 = Console.ReadLine();
             int numero2 = int.Parse(entrada2);
 
-            // Calcular y mostrar la suma
             int suma = numero1 + numero2;
             Console.WriteLine("La suma de los dos números es: " + suma);
         }
