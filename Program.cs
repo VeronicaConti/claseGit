@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MiPrimerPrograma
 {
@@ -6,79 +7,154 @@ namespace MiPrimerPrograma
     {
         static void Main(string[] args)
         {
-            /* // Ingresar Nombre 
-             Console.WriteLine("Por favor, ingrese su nombre completo:");
-             string nombre = Console.ReadLine();
-
-             // Morstrar Nombre y Fecha
-             string fechaHoy = DateTime.Now.ToString("dd/MM/yyyy");
-             Console.WriteLine("Nombre: " + nombre);
-             Console.WriteLine("Fecha de hoy: " + fechaHoy);
-             Console.WriteLine("----------------------------------");
-
-             Console.WriteLine("Ingrese el primer número:");
-             string entrada1 = Console.ReadLine();
-             int numero1 = int.Parse(entrada1);
-
-             Console.WriteLine("Ingrese el segundo número:");
-             string entrada2 = Console.ReadLine();
-             int numero2 = int.Parse(entrada2);
-
-             // Muestra suma para segundo commit
-             int suma = numero1 + numero2;
-            Console.WriteLine("La suma de los dos números es: " + suma); */
-
-            //Arreglo estatico de tamaño fijo
             /*
-            string[] frutas = new string[3];
-            frutas[0] = "Manzana";
-            frutas[1] = "Banana";
-            frutas[2] = "Naranja"; */
+            Console.WriteLine("Por favor, ingrese su nombre completo:");
+            string nombre = Console.ReadLine();
 
-            //Una forma de recorrer el array
-            /* for (int i = 0; i < frutas.Length; i++)
-             {
-                 Console.WriteLine("Fruta " + (i + 1) + ": " + frutas[i]);
-             } */
+            string fechaHoy = DateTime.Now.ToString("dd/MM/yyyy");
+            Console.WriteLine("Nombre: " + nombre);
+            Console.WriteLine("Fecha de hoy: " + fechaHoy);
+            Console.WriteLine("----------------------------------");
 
-            //Otra forma de recorrer el array
-            /*
-            foreach (string fruta in frutas)
+            Console.WriteLine("Ingrese el primer número:");
+            int numero1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingrese el segundo número:");
+            int numero2 = int.Parse(Console.ReadLine());
+
+            int suma = numero1 + numero2;
+            Console.WriteLine("La suma de los dos números es: " + suma);
+            Console.WriteLine("----------------------------------");
+
+            string[] frutasArray = new string[3];
+            frutasArray[0] = "Manzana";
+            frutasArray[1] = "Banana";
+            frutasArray[2] = "Naranja";
+
+            for (int i = 0; i < frutasArray.Length; i++)
+            {
+                Console.WriteLine("Fruta " + (i + 1) + ": " + frutasArray[i]);
+            }
+
+            foreach (string fruta in frutasArray)
             {
                 Console.WriteLine("Arreglo: " + fruta);
             }
+            Console.WriteLine("----------------------------------");
 
-            //Lista de tamaño dinamico
-            List<string> frutas = new List<string>();
-            frutas.Add("Manzana");
-            frutas.Add("Banana");
-            frutas.Add("Naranja");
+            List<string> frutasLista = new List<string>();
+            frutasLista.Add("Manzana");
+            frutasLista.Add("Banana");
+            frutasLista.Add("Naranja");
 
-            foreach (string fruta in frutas)
+            foreach (string fruta in frutasLista)
             {
                 Console.WriteLine("Fruta: " + fruta);
+            }
+            Console.WriteLine("----------------------------------");
 
-            } 
+            Dictionary<int, string> frutasDiccNum = new Dictionary<int, string>();
+            frutasDiccNum.Add(1, "Kiwi");
+            frutasDiccNum.Add(2, "Sandia");
+            frutasDiccNum.Add(3, "Frutilla");
 
-            //Diccionario mas rapido que la Lista
-            Dictionary<int, string> frutasDicc = new Dictionary<int, string>();
-
-            frutasDicc.Add(1, "Kiwi");
-            frutasDicc.Add(2, "Sandia");
-            frutasDicc.Add(3, "Frutilla"); */
-
-            Dictionary<string, int> frutasDicc = new Dictionary<String, int>();
-
-            frutasDicc.Add("Kiwi", 10);
-            frutasDicc.Add("Sandia", 99);
-            frutasDicc.Add("Frutilla", 100);
-
-            foreach (KeyValuePair<string, int> fruta in frutasDicc)
+            foreach (KeyValuePair<int, string> fruta in frutasDiccNum)
             {
                 Console.WriteLine("Clave: " + fruta.Key + " - Fruta: " + fruta.Value);
             }
+            Console.WriteLine("----------------------------------");
 
+            Dictionary<string, int> frutasDiccTexto = new Dictionary<string, int>();
+            frutasDiccTexto.Add("Kiwi", 10);
+            frutasDiccTexto.Add("Sandia", 99);
+            frutasDiccTexto.Add("Frutilla", 100);
 
+            foreach (KeyValuePair<string, int> fruta in frutasDiccTexto)
+            {
+                Console.WriteLine("Fruta: " + fruta.Key + " - Cantidad: " + fruta.Value);
+            }
+            Console.WriteLine("----------------------------------");
+            
+
+            Funciones funciones = new Funciones();
+
+            int resultado = funciones.Cuadrado(5);
+            Console.WriteLine("El cuadrado de 5 es: " + resultado);
+            Console.WriteLine("----------------------------------");
+
+            int a = 10;
+            int b = 20;
+
+            Console.WriteLine("Antes del intercambio:");
+            funciones.Imprimir(a, b);
+
+            funciones.Intercambio(ref a, ref b);
+
+            Console.WriteLine("Después del intercambio:");
+            funciones.Imprimir(a, b);
+            Console.WriteLine("----------------------------------");
+
+            Console.WriteLine("Ingrese el primer número:");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Ingrese el segundo número:");
+            int num2 = int.Parse(Console.ReadLine());
+
+            int mayor = funciones.Mayor(num1, num2);
+            Console.WriteLine("El mayor entre " + num1 + " y " + num2 + " es: " + mayor);
+            Console.WriteLine("----------------------------------");
+
+            Console.WriteLine("Ingrese su sueldo:");
+            double sueldo = double.Parse(Console.ReadLine());
+
+            funciones.AumentarDiezPorCiento(ref sueldo);
+            Console.WriteLine("Su sueldo con aumento del 10% es: " + sueldo);
+            Console.WriteLine("----------------------------------"); 
+
+            Producto producto = new Producto("Notebook Lenovo", 450000, 15);
+            producto.MostrarInfo();
+            Producto producto2 = new Producto("Celular Samsung ", 300000, 19);
+            producto2.MostrarInfo(); */
+
+            // Lista de productos
+            List<Producto> productos = new List<Producto>
+            {
+                new Producto("Notebook RCA", 666000, 5),
+                new Producto("Mouse Genius", 9000, 50),
+                new Producto("Monitor LCD Philip", 200000, 19)
+            };
+
+            // Mostrar los productos con foreach
+            Console.WriteLine("Lista de productos:");
+            foreach (Producto p in productos)
+            {
+                p.MostrarInfo();
+            }
+
+            Console.WriteLine("-----------------------------------");
+
+            // Actualizo el stock de 2 productos
+            productos[0].ActualizarStock(-1); // Vendimos 1 note
+            productos[1].ActualizarStock(90); // Recibimos 90 mousses
+
+            Console.WriteLine("Se actualizo el Stock:");
+            foreach (Producto p in productos)
+            {
+                p.MostrarInfo();
+            }
+
+            Console.WriteLine("-----------------------------------");
+
+            // Cliente
+            Cliente cliente = new Cliente("Lionel Messi", "el10@email.com", "2494-123456");
+            cliente.MostrarInfo();
+
+            Console.WriteLine("-----------------------------------");
+
+            // Empleado y Bono
+            Empleado empleado = new Empleado("Gianluca Prestiani", "Desarrollador", 990000);
+            double bono = empleado.CalcularBono(10);
+            Console.WriteLine($"Empleado: {empleado.Nombre}, Cargo: {empleado.Cargo}, Sueldo: {empleado.Sueldo}, Bono 10%: {bono}");
         }
     }
 }
