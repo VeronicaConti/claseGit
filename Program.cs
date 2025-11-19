@@ -114,7 +114,7 @@ namespace MiPrimerPrograma
             Producto producto = new Producto("Notebook Lenovo", 450000, 15);
             producto.MostrarInfo();
             Producto producto2 = new Producto("Celular Samsung ", 300000, 19);
-            producto2.MostrarInfo(); */
+            producto2.MostrarInfo(); 
 
             // Lista de productos
             List<Producto> productos = new List<Producto>
@@ -155,6 +155,38 @@ namespace MiPrimerPrograma
             Empleado empleado = new Empleado("Gianluca Prestiani", "Desarrollador", 990000);
             double bono = empleado.CalcularBono(10);
             Console.WriteLine($"Empleado: {empleado.Nombre}, Cargo: {empleado.Cargo}, Sueldo: {empleado.Sueldo}, Bono 10%: {bono}");
+        */
+
+            CuentaBancaria cuenta = new CuentaBancaria("Veronica Conti", 30);
+
+            Console.WriteLine("Titular de la cuenta: " + cuenta.ObtenerTitular());
+            Console.WriteLine("Saldo: $" + cuenta.ObtenerSaldo());
+            Console.WriteLine("-----------------------------------");
+
+            // 1 deposito
+            cuenta.Depositar(50);
+            Console.WriteLine("Se depositaron $50");
+            Console.WriteLine("Saldo actual: $" + cuenta.ObtenerSaldo());
+
+            // Segundo depósito
+            cuenta.Depositar(20);
+            Console.WriteLine("Se depositaron $20");
+            Console.WriteLine("Saldo actual: $" + cuenta.ObtenerSaldo());
+            Console.WriteLine("-----------------------------------");
+
+            // Primer retiro
+            bool retiro1 = cuenta.Retirar(40);
+            Console.WriteLine(retiro1 ? "Se retiraron $40" : "Retiro de $40 fallido");
+            Console.WriteLine("Saldo actual: $" + cuenta.ObtenerSaldo());
+
+            // Segundo retiro
+            bool retiro2 = cuenta.Retirar(100);
+            Console.WriteLine(retiro2 ? "Se retiraron $100" : "Retiro de $100 fallido");
+            Console.WriteLine("Saldo actual: $" + cuenta.ObtenerSaldo());
+            Console.WriteLine("-----------------------------------");
+
+            // Saldo final
+            Console.WriteLine("Saldo final: $" + cuenta.ObtenerSaldo());
         }
     }
 }
