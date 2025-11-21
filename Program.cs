@@ -155,7 +155,7 @@ namespace MiPrimerPrograma
             Empleado empleado = new Empleado("Gianluca Prestiani", "Desarrollador", 990000);
             double bono = empleado.CalcularBono(10);
             Console.WriteLine($"Empleado: {empleado.Nombre}, Cargo: {empleado.Cargo}, Sueldo: {empleado.Sueldo}, Bono 10%: {bono}");
-        */
+        
 
             CuentaBancaria cuenta = new CuentaBancaria("Veronica Conti", 30);
 
@@ -176,17 +176,39 @@ namespace MiPrimerPrograma
 
             // Primer retiro
             bool retiro1 = cuenta.Retirar(40);
-            Console.WriteLine(retiro1 ? "Se retiraron $40" : "Retiro de $40 fallido");
+            Console.WriteLine(retiro1 ? "Se retiraron $40" : "No se puede retirar ese monto, saldo insuficiente");
             Console.WriteLine("Saldo actual: $" + cuenta.ObtenerSaldo());
 
             // Segundo retiro
             bool retiro2 = cuenta.Retirar(100);
-            Console.WriteLine(retiro2 ? "Se retiraron $100" : "Retiro de $100 fallido");
+            Console.WriteLine(retiro2 ? "Se retiraron $100" : "No se puede retirar ese monto, saldo insuficiente");
             Console.WriteLine("Saldo actual: $" + cuenta.ObtenerSaldo());
             Console.WriteLine("-----------------------------------");
 
             // Saldo final
             Console.WriteLine("Saldo final: $" + cuenta.ObtenerSaldo());
+            
+
+            new.Gerente("Eugenio Olivera", "Director Técnico", 250000, 50000);
+            gerente.MostrarInfo();
+
+            new.Gerente("Mariana Lopez", "Gerente de Ventas", 220000, 40000).MostrarEquipo();
+
+            Console.WriteLine("-----------------------------------");
+            */
+            List<Animal> animales = new List<Animal>
+            {
+                new Animal("Animal"),
+                new Perro("Juanello"),
+                new Gato("Ramona")
+            };
+
+            foreach (Animal a in animales)
+            {
+                a.HacerSonido();
+            }
+
+
         }
     }
 }

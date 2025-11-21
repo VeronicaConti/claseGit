@@ -15,4 +15,8 @@ public class Empleado
     {
         return Sueldo * (porcentaje / 100);
     }
+    public virtual void MostrarInfo()
+    {
+        Console.WriteLine($"Empleado: {Nombre}, Cargo: {Cargo}, Sueldo: {Sueldo}");
+    }
 }
